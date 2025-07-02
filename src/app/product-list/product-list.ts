@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {Search} from './search/search';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   imports: [
-
+    Search,
+    NgForOf,
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
@@ -18,17 +21,17 @@ export class ProductList {
     discount: 8.9,
     inStock :5
   }
-getDisscountPrice(){
-    return this.product.price - (this.product.price * this.product.discount /100);
-}
+// getDisscountPrice(){
+//     return this.product.price - (this.product.price * this.product.discount /100);
+// }
 
 
-  decrementCartValue() {
-    if (this.addToCard>0){this.addToCard--;}
-
-  }
-
-  incrementCartValue() {
-    if(this.addToCard<this.product.inStock){this.addToCard++;}
-  }
-}
+//   decrementCartValue() {
+//     if (this.addToCard>0){this.addToCard--;}
+//
+//   }
+//
+//   incrementCartValue() {
+//     if(this.addToCard<this.product.inStock){this.addToCard++;}
+//   }
+ }
