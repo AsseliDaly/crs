@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import {Search} from './search/search';
 import {NgForOf} from '@angular/common';
+import {ProductList} from './product-list/product-list';
 
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-container',
   imports: [
     Search,
-    NgForOf,
+    ProductList,
   ],
-  templateUrl: './product-list.html',
-  styleUrl: './product-list.css'
+  templateUrl: './container.html',
+  styleUrl: './container.css'
 })
-export class ProductList {
+export class Container {
   addToCard :number =0;
   product={
     image:"/images/iphone.png",
