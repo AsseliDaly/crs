@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
-import {NgForOf} from '@angular/common';
+import {Product} from './product/product';
+import {Filter} from './filter/filter';
+
 
 @Component({
   selector: 'product-list',
   imports: [
-    NgForOf
+    Product,
+    Filter
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
 export class ProductList {
+
   products = [
     {
       id: 1,
@@ -536,4 +540,6 @@ export class ProductList {
       slug: "michael-feburary-sk8-hi"
     }
   ];
+  inStock=this.products.filter(p=>p.is_in_inventory==true).length;
+  outOfstock=this.products.filter(p=>p.is_in_inventory==false).length;
 }
